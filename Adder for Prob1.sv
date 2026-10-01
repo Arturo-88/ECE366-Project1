@@ -3,12 +3,9 @@
 
 module one_bit_FA_Behav(A, B, Cin, S, Cout);
   // Declare Inputs
-  input A;
-  input B;
-  input Cin;
+  input A, B, Cin
   // Declare Outputs
-  output S;
-  output Cout;
+  output S, Cout;
   
   assign S = A || B || Cin;	// Logic for S-bit
   assign Cout = (A && B)||(B && Cin)||(Cin && A); // Logic for Cout-bit
@@ -19,17 +16,11 @@ endmodule
 
 module one_bit_FA_Struct(A, B, Cin, S, Cout);
   // Declare Inputs
-  input A;
-  input B;
-  input Cin;
+  input A, B, Cin;
   // Declare Outputs
-  output S;
-  output Cout;
+  output S, Cout;
   // Declare temp variables
-  wire temp1;
-  wire temp2;
-  wire temp3;
-  wire temp4;
+  wire temp1, temp2, temp3, temp4;
   
   xor XOR1(temp1, A, B);
   xor XOR2(S, temp1, Cin); // S = (A Xor B) Xor Cin
