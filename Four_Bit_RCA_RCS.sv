@@ -16,7 +16,7 @@ module four_bit_RCA_RCS(A, B, Cin, S, Cout);
   // If Cin is 1, we invert B, but if not, we don't change B
   genvar i;
   for (i = 0; i < 4; i = i + 1) begin
-    assign Btemp[i] = B[i] && Cin;	// This automatically masks the bit off or on
+    assign Btemp[i] = B[i] ^ Cin;	// This automatically masks the bit off or on
   end
   // If Cin was 0, we are adding, and Btemp is the same as B
   // If Cin was 1, we are subtracting, and Btemp is NOT(B)
