@@ -22,16 +22,16 @@ module four_bit_RCA_RCS(A, B, Cin, S, Cout);
   // If Cin was 1, we are subtracting, and Btemp is NOT(B)
   
   // Use same logic from 1Bit Adder to add bit-by-bit
-  assign S[0] = A[0] || Btemp[0] || Cin;	// Cin is either 1 or 0
+  assign S[0] = A[0] ^ Btemp[0] ^ Cin;	// Cin is either 1 or 0
   assign C1 = (A[0] && Btemp[0])||(Btemp[0] && Cin)||(Cin && A[0]);
   
-  assign S[1] = A[1] || Btemp[1] || C1;
+  assign S[1] = A[1] ^ Btemp[1] ^ C1;
   assign C2 = (A[1] && Btemp[1])||(Btemp[1] && C1)||(C1 && A[1]);
   
-  assign S[2] = A[2] || Btemp[2] || C2;
+  assign S[2] = A[2] ^ Btemp[2] ^ C2;
   assign C3 = (A[2] && Btemp[2])||(Btemp[2] && C2)||(C2 && A[2]);
   
-  assign S[3] = A[3] || Btemp[3] || C3;
+  assign S[3] = A[3] ^ Btemp[3] ^ C3;
   assign Cout = (A[3] && Btemp[3])||(Btemp[3] && C3)||(C3 && A[3]);
   
 endmodule
