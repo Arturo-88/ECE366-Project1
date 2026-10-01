@@ -1,0 +1,42 @@
+// Project 1
+// Problem 1: Part (a)
+
+module one_bit_FA_Behav(A, B, Cin, S, Cout);
+  // Declare Inputs
+  input A;
+  input B;
+  input Cin;
+  // Declare Outputs
+  output S;
+  output Cout;
+  
+  S = A || B || Cin;	// Logic for S-bit
+  Cout = (A && B)||(B && Cin)||(Cin && A); // Logic for Cout-bit
+  
+endmodule
+
+// Problem 1: Part (b)
+
+module one_bit_FA_Struct(A, B, Cin, S, Cout);
+  // Declare Inputs
+  input A;
+  input B;
+  input Cin;
+  // Declare Outputs
+  output S;
+  output Cout;
+  // Declare temp variables
+  wire temp1;
+  wire temp2;
+  wire temp3;
+  wire temp4;
+  
+  XOR XOR1(temp1, A, B);
+  XOR XOR2(S, temp1, Cin); // S = (A Xor B) Xor Cin
+  
+  AND AND1(temp2, A, B);
+  AND AND2(temp3, B, Cin);
+  AND AND3(temp4, Cin, A);
+  OR OR1(Cout, temp2, temp3, temp4); // S = (AB)+(BCin)+(ACin)
+  
+endmodule
