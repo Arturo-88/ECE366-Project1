@@ -1,0 +1,120 @@
+$date
+	Thu Oct  8 21:39:57 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module tb_four_bit_RCA_RCS_plus_CLA $end
+$var wire 1 ! Cout_CLA $end
+$var wire 32 " S_CLA [31:0] $end
+$var wire 4 # S_RCA [3:0] $end
+$var wire 1 $ Cout_RCA $end
+$var reg 32 % A_CLA [31:0] $end
+$var reg 4 & A_RCA [3:0] $end
+$var reg 32 ' B_CLA [31:0] $end
+$var reg 4 ( B_RCA [3:0] $end
+$var reg 1 ) Cin_CLA $end
+$var reg 1 * Cin_RCA $end
+$scope module U0 $end
+$var wire 4 + A [3:0] $end
+$var wire 4 , B [3:0] $end
+$var wire 1 - C1 $end
+$var wire 1 . C2 $end
+$var wire 1 / C3 $end
+$var wire 1 * Cin $end
+$var wire 1 $ Cout $end
+$var wire 4 0 S [3:0] $end
+$var wire 4 1 Btemp [3:0] $end
+$scope begin genblk1[0] $end
+$var parameter 2 2 i $end
+$upscope $end
+$scope begin genblk1[1] $end
+$var parameter 2 3 i $end
+$upscope $end
+$scope begin genblk1[2] $end
+$var parameter 3 4 i $end
+$upscope $end
+$scope begin genblk1[3] $end
+$var parameter 3 5 i $end
+$upscope $end
+$upscope $end
+$scope module U1 $end
+$var wire 32 6 A [31:0] $end
+$var wire 32 7 B [31:0] $end
+$var wire 1 ) Cin $end
+$var wire 1 ! Cout $end
+$var wire 32 8 S [31:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+b11 5
+b10 4
+b1 3
+b0 2
+$end
+#0
+$dumpvars
+bz 8
+bx 7
+bx 6
+b101 1
+b1000 0
+1/
+1.
+1-
+b101 ,
+b11 +
+0*
+x)
+b101 (
+bx '
+b11 &
+bx %
+0$
+b1000 #
+bz "
+z!
+$end
+#8
+1$
+b10 #
+b10 0
+b1010 1
+1*
+b111 &
+b111 +
+#16
+0.
+0$
+0/
+0-
+b1111 #
+b1111 0
+b110 1
+0*
+b110 (
+b110 ,
+b1001 &
+b1001 +
+#24
+1$
+1/
+b0 #
+b0 0
+b100 1
+b100 (
+b100 ,
+b1100 &
+b1100 +
+#32
+0)
+b1 '
+b1 7
+b1111111111111111 %
+b1111111111111111 6
+#40
