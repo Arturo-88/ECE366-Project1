@@ -138,5 +138,50 @@ module CLA(A, B, Cin, S, Cout);
   four_bit_CLA CLA7(
     A[31:28], B[31:28], C28, S[31:28], Cout
   );
+endmodule
+  
+ // Problem 1: Part (c) and (d)
+ // 4-bit Ripple Carry Adder/Subtractor
+
+module four_bit_RCA_RCS(A, B, Cin, S, Cout);
+
+  input [3:0] A, B;
+  input Cin;
+  output [3:0] S;
+  output Cout;
+
+  wire C1, C2, C3;
+  wire [3:0] Btemp;
+
+  // Invert B when subtracting
+  assign Btemp[0] = B[0] ^ Cin;
+  assign Btemp[1] = B[1] ^ Cin;
+  assign Btemp[2] = B[2] ^ Cin;
+  assign Btemp[3] = B[3] ^ Cin;
+
+  // Bit 0
+  assign S[0] = A[0] ^ Btemp[0] ^ Cin;
+  assign C1 = (A[0] && Btemp[0]) ||
+              (Btemp[0] && Cin) ||
+              (Cin && A[0]);
+
+  // Bit 1
+  assign S[1] = A[1] ^ Btemp[1] ^ C1;
+  assign C2 = (A[1] && Btemp[1]) ||
+              (Btemp[1] && C1) ||
+              (C1 && A[1]);
+
+  // Bit 2
+  assign S[2] = A[2] ^ Btemp[2] ^ C2;
+  assign C3 = (A[2] && Btemp[2]) ||
+              (Btemp[2] && C2) ||
+              (C2 && A[2]);
+
+  // Bit 3
+  assign S[3] = A[3] ^ Btemp[3] ^ C3;
+  assign Cout = (A[3] && Btemp[3]) ||
+                (Btemp[3] && C3) ||
+                (C3 && A[3]);
 
 endmodule
+
