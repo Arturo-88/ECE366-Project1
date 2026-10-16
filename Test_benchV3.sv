@@ -64,12 +64,40 @@
     B_PPA = 16'b0000000000000000;
     Cin_PPA = 1;
     
-    #8;
+    #8; 
     
     $display("PPA Testing: 65535 + 0 + 1");
     $display("A = %b, B = %b, Cin = %b", A_PPA, B_PPA, Cin_PPA);
     $display("S = %b, Cout = %b", S_PPA, Cout_PPA);
     $display("Expected S = 0000000000000000, Cout = 1");
+    
+    //Test 5 Unsigned subtraction 20 - 7 = 13
+    
+    A_PPA = 16'b0000000000010100;
+    B_PPA = 16'b0000000000000111;
+    Cin_PPA = 1;
+    
+    #8; 
+    
+    $display("PPA Testing: 20 - 7 = 13");
+    $display("A = %b, B = %b, Cin = %b", A_PPA, B_PPA, Cin_PPA);
+    $display("S = %b, Cout = %b", S_PPA, Cout_PPA);
+    $display("Expected S = 0000000000001101, Cout = 1");
+    
+    
+    
+    
+    //Test 6 signed addition 10 + -2 = 8 
+    A_PPA = 16'b0000000000001010;
+    B_PPA = 16'b1111111111111110;
+    Cin_PPA = 0;
+    
+    #8;
+    
+    $display("PPA Testing: 10 + -2 = 8 ");
+    $display("A = %b, B = %b, Cin = %b", A_PPA, B_PPA, Cin_PPA);
+    $display("S = %b, Cout = %b", S_PPA, Cout_PPA);
+    $display("Expected S = 0000000000001000, Cout = 1");
     
     //ending code
     $finish;
