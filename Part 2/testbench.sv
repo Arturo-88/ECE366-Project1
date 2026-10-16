@@ -21,7 +21,7 @@ module tb_CLA;
   );
   
   initial begin
-    $dumpfile ("project1part2.vcd"); // used for the file to note that the simulator will store the varform into here 
+    $dumpfile ("dumpfile.vcd"); // used for the file to note that the simulator will store the varform into here 
     $dumpvars;
     
     //  Test for carry propagation for CLA
