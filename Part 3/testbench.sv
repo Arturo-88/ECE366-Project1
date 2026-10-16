@@ -97,6 +97,17 @@
       $display("A = %b, B = %b, Cin = %b", A, B, Cin);
       $display("S = %b, Cout = %b", S, Cout);
       $display("Expected S = 0000000000001000, Cout = 1");
+      
+      // Test 7 Signed subtraction, 7 - (-7) = 14
+      A = 16'b0000000000000111;  // 7
+      B = ~16'b1111111111111001; // Invert -7 for subtraction
+      Cin = 1;
+
+      #8;
+
+      $display("PPA: Testing 7 - (-7)");
+      $display("S = %b, signed result = %0d, Cout = %b", S, $signed(S), Cout);
+      $display("Expected S = 0000000000001110, Cout = 0");
 
       $finish;
       
