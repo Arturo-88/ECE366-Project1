@@ -74,7 +74,7 @@
     //Test 5 Unsigned subtraction 20 - 7 = 13
     
     A_PPA = 16'b0000000000010100;
-    B_PPA = 16'b0000000000000111;
+    B_PPA = ~16'b0000000000000111;
     Cin_PPA = 1;
     
     #8; 
