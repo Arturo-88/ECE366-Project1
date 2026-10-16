@@ -23,7 +23,7 @@
     B_PPA = 16'b0000000000001000;
     Cin_PPA = 0;
     
-    #8 
+    #8; 
     
     $display("PPA: Testing 7 + 8");
     $display("A = %b, B = %b, Cin = %b", A_PPA, B_PPA, Cin_PPA);
@@ -38,7 +38,7 @@
     B_PPA = 16'b0000000000000001;
     Cin_PPA = 0;
     
-    #8 
+    #8; 
     
     $display("PPA Testing: 65535 + 1");
     $display("A = %b, B = %b, Cin = %b", A_PPA, B_PPA, Cin_PPA);
@@ -51,7 +51,7 @@
     B_PPA = 16'b0000000000000101;
     Cin_PPA = 1;
     
-    #8 
+    #8;
     
     $display("PPA Testing: 3 + 5 + 1");
     $display("A = %b, B = %b, Cin = %b", A_PPA, B_PPA, Cin_PPA);
@@ -64,7 +64,7 @@
     B_PPA = 16'b0000000000000000;
     Cin_PPA = 1;
     
-    #8 
+    #8;
     
     $display("PPA Testing: 65535 + 0 + 1");
     $display("A = %b, B = %b, Cin = %b", A_PPA, B_PPA, Cin_PPA);
