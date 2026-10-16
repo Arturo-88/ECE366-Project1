@@ -15,8 +15,6 @@
     .Cout (Cout_PPA)
   );
   
-  
-  
   initial begin
     $dumpfile ("dump.vcd"); // used for the file to note that the simulator will store the varform into here 
     $dumpvars;
@@ -77,5 +75,4 @@
     $finish;
     
   end 
-  
 endmodule
