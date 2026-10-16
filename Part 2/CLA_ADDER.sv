@@ -1,4 +1,3 @@
-
 // Project 1
 // Problem 2: Part (a)
 // 32-bit Carry Lookahead Adder
@@ -184,4 +183,3 @@ module four_bit_RCA_RCS(A, B, Cin, S, Cout);
                 (C3 && A[3]);
 
 endmodule
-

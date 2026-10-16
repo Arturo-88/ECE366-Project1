@@ -37,7 +37,7 @@ module tb_RCA_RCS;
     #8;
     
     $display("I want to show that 3 + 5 is correct");
-    $display("this gives us S = %b and Cout = %b", S_RCA, Cout_RCA);
+    $display("this gives us S = %b and Cout = %b", S, Cout);
     $display("S = 1000 is binary for 8 so it does work");
     
     

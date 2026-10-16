@@ -21,9 +21,9 @@
       $dumpfile ("project1part3.vcd"); // used for the file to note that the simulator will store the varform into here 
       $dumpvars;
 
-      A_PPA = 16'b0000000000000111;
-      B_PPA = 16'b0000000000001000;
-      Cin_PPA = 0;
+      A = 16'b0000000000000111;
+      B = 16'b0000000000001000;
+      Cin = 0;
 
       #8; 
 
@@ -36,22 +36,22 @@
 
       // Test 2 for PPA carry propagation through all 16 bits
 
-      A_PPA = 16'b1111111111111111;
-      B_PPA = 16'b0000000000000001;
-      Cin_PPA = 0;
+      A = 16'b1111111111111111;
+      B = 16'b0000000000000001;
+      Cin = 0;
 
       #8; 
 
       $display("PPA Testing: 65535 + 1");
       $display("A = %b, B = %b, Cin = %b", A, B, Cin);
-      $display("S = %b, Cout = %b", S, Count);
+      $display("S = %b, Cout = %b", S, Cout);
       $display("Expected S = 0000000000000000, Cout = 1");
 
-      //TEST 3 for PPA addition with carry in
+      // TEST 3 for PPA addition with carry in
 
-      A_PPA = 16'b0000000000000011;
-      B_PPA = 16'b0000000000000101;
-      Cin_PPA = 1;
+      A = 16'b0000000000000011;
+      B = 16'b0000000000000101;
+      Cin = 1;
 
       #8;
 
@@ -62,15 +62,15 @@
 
       // TEST 4 for PPA carry in propagates through all 16 bits
 
-      A_PPA = 16'b1111111111111111;
-      B_PPA = 16'b0000000000000000;
-      Cin_PPA = 1;
+      A = 16'b1111111111111111;
+      B = 16'b0000000000000000;
+      Cin = 1;
 
       #8; 
 
       $display("PPA Testing: 65535 + 0 + 1");
       $display("A = %b, B = %b, Cin = %b", A, B, Cin);
-      $display("S = %b, Cout = %b", S_PPA, Cout_PPA);
+      $display("S = %b, Cout = %b", S, Cout);
       $display("Expected S = 0000000000000000, Cout = 1");
 
       // Test 5 Unsigned subtraction 20 - 7 = 13
@@ -86,13 +86,10 @@
       $display("S = %b, Cout = %b", S, Cout);
       $display("Expected S = 0000000000001101, Cout = 1");
 
-
-
-
       // Test 6 signed addition 10 + -2 = 8 
-      A_PPA = 16'b0000000000001010;
-      B_PPA = 16'b1111111111111110;
-      Cin_PPA = 0;
+      A = 16'b0000000000001010;
+      B = 16'b1111111111111110;
+      Cin = 0;
 
       #8;
 
