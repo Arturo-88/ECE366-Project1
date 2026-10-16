@@ -25,7 +25,7 @@ module tb_RCA_RCS;
   );
   
   initial begin
-    $dumpfile ("project1part1.vcd"); // used for the file to note that the simulator will store the varform into here 
+    $dumpfile ("dumpfile.vcd"); // used for the file to note that the simulator will store the varform into here 
     $dumpvars;
     
     // Testing for 1 unsigned addition
